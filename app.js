@@ -17,4 +17,4 @@ var twilioClient = Twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 app.use('/api', require('./routes/api'));
 
 // Start the web server
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
