@@ -4,6 +4,7 @@
   "description": "A fun Phone Roulette game.",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "firebase": "^2.3.1",
     "twilio": "^2.5.2"
