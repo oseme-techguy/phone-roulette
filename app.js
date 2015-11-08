@@ -15,7 +15,7 @@ var db = new Firebase(FIREBASE_APP_URL);
 var twilioClient = Twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 
 // Initialize Express middleware
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Wire up the routes
 app.use('/api', require('./routes/api'));
