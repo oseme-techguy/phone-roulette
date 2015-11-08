@@ -2,6 +2,7 @@
 
 var Firebase = require('firebase');
 var Twilio = require('twilio');
+var bodyParser = require('body-parser');
 var express = require('express');
 
 // Globals
@@ -12,6 +13,9 @@ var TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
 var app = express();
 var db = new Firebase(FIREBASE_APP_URL);
 var twilioClient = Twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
+
+// Initialize Express middleware
+app.use(bodyParser.urlencoded());
 
 // Wire up the routes
 app.use('/api', require('./routes/api'));
